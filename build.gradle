@@ -1,0 +1,65 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.5.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+	id 'jacoco'
+	id "org.sonarqube" version "2.7"
+}
+
+apply plugin: 'io.spring.dependency-management'
+group = 'com.djhoyos'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+apply plugin: 'java'
+apply plugin: 'jacoco'
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'com.h2database:h2'
+	runtimeOnly 'org.postgresql:postgresql'
+	compileOnly("org.springframework.boot:spring-boot-devtools")
+
+	testImplementation('org.junit.jupiter:junit-jupiter-api:5.3.1')
+	testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.3.1')
+
+	testCompile group: 'junit', name: 'junit', version: '4.12'
+	testImplementation 'org.mockito:mockito-all:1.10.19'
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	implementation 'org.modelmapper:modelmapper:2.3.0'
+	compileOnly 'org.projectlombok:lombok:1.18.12'
+	annotationProcessor 'org.projectlombok:lombok:1.18.12'
+
+	testCompileOnly 'org.projectlombok:lombok:1.18.12'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
+}
+
+jacocoTestReport {
+	reports {
+		xml.enabled true
+	}
+}
+
+test {
+	useJUnitPlatform()
+
+}
+
+sonarqube {
+	properties {
+		property "sonar.sources", "src/main/java"
+		property "sonar.java.binaries", "build/classes/java/main"
+		property "sonar.tests", "src/test/java"
+		property "sonar.test.binaries", "build/classes/java/test"
+		property "sonar.jacoco.reportPaths", "path/reports/jacoco/jacocoTestReport.xml"
+		property "sonar.junit.reportPaths", "build/test-results/test"
+	}
+}
