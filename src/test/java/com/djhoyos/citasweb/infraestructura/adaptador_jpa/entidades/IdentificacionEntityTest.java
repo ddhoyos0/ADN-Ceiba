@@ -10,35 +10,35 @@ import org.junit.jupiter.api.Test;
 import org.modelmapper.ModelMapper;
 
 import com.djhoyos.citasweb.databuider.TestDataBuilder;
-import com.djhoyos.citasweb.dominio.modelo.Documento;
+import com.djhoyos.citasweb.dominio.modelo.Identificacion;
 
-class DocumentoEntityTest {
+class IdentificacionEntityTest {
 
 
 	@Resource
-    private DocumentoEntity documentoEntity;
+    private IdentificacionEntity documentoEntity;
 	
 	private ModelMapper modelMapper = new ModelMapper();
 	
 	public TestDataBuilder datos;
-	public Documento documento;	
+	public Identificacion documento;	
 	
 	@BeforeEach
 	public void inicio() {
 		datos = new TestDataBuilder();
-		documento = new Documento(1,"Cedula");
-		documentoEntity = new DocumentoEntity();
+		documento = new Identificacion(1,"Cedula");
+		documentoEntity = new IdentificacionEntity();
 	}
      
     @Test
     public void validarEntidadCita() {
-    	documentoEntity = modelMapper.map(documento, DocumentoEntity.class);
+    	documentoEntity = modelMapper.map(documento, IdentificacionEntity.class);
         assertEquals(documento.getId(), documentoEntity.getId());
     }
 
     @Test
 	public void validandoMetodoSet(){
-		DocumentoEntity documento = new DocumentoEntity();
+		IdentificacionEntity documento = new IdentificacionEntity();
 		documento.setId(1);
 		documento.setTipo("Cedula de Ciudadania");
 		assertNotNull(documento);

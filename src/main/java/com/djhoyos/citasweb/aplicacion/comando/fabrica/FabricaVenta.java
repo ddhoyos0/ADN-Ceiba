@@ -6,11 +6,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 public final class FabricaVenta {
+	
+	private FabricaVenta() {}
+	
     public static Venta modelo(ComandoVenta comando) {
         return new Venta(
                 comando.getId(),
                 comando.getFecha(),
-                comando.getCita(),
+                FabricaCita.modelo(comando.getCita()),
                 comando.getUtilidad(),
                 comando.getComision(),
                 comando.getTotal(),

@@ -20,9 +20,8 @@ import com.djhoyos.citasweb.aplicacion.comando.manejador.persona.ManejadorCrearP
 import com.djhoyos.citasweb.aplicacion.comando.manejador.persona.ManejadorEliminarPersona;
 import com.djhoyos.citasweb.aplicacion.comando.manejador.persona.ManejadorListarPersona;
 import com.djhoyos.citasweb.dominio.modelo.Persona;
-import com.djhoyos.citasweb.infraestructura.adaptador_jpa.entidades.DocumentoEntity;
+import com.djhoyos.citasweb.infraestructura.adaptador_jpa.entidades.IdentificacionEntity;
 import com.djhoyos.citasweb.infraestructura.adaptador_jpa.repositorio.RepositorioDocumentoJpa;
-
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -51,13 +50,13 @@ public class PersonaControlador {
 
     @GetMapping("/documento")
     @ResponseStatus(HttpStatus.OK)
-    public List<DocumentoEntity> listarDocumento() {
+    public List<IdentificacionEntity> listarDocumento() {
        return this.documentoJpa.findAll();
     }
 
     @PostMapping("/crear")
     @ResponseStatus(HttpStatus.CREATED)
-    public void crear(@RequestBody ComandoPersona comando) {
+    public void crear(@RequestBody ComandoPersona comando) {    	
         this.servicioCrear.ejecutar(comando);
     }
 

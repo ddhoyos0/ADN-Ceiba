@@ -7,10 +7,9 @@ import lombok.NoArgsConstructor;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ComandoPersona {
- 
+public class ComandoPersona { 
     private long id;
-    private ComandoTipoDocumento tipo_documento;
+    private ComandoIdentificacion identificacion;
     private String documento;
     private String nombre;
     private String celular;

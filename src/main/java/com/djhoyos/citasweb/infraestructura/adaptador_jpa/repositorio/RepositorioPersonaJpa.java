@@ -17,6 +17,6 @@ public interface RepositorioPersonaJpa extends JpaRepository<PersonaEntity, Long
 	@Transactional
 	@Modifying
 	@Query(value = "UPDATE personas SET estado = ? WHERE id = ?", nativeQuery = true)
-	int updatePersonaSetEstadoForId(boolean estado, long id);
+	void updatePersonaSetEstadoForId(boolean estado, long id);
 
 }

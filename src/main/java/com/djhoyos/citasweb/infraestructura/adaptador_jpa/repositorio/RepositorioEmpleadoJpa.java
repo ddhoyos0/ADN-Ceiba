@@ -17,5 +17,5 @@ public interface RepositorioEmpleadoJpa extends JpaRepository<EmpleadoEntity, Lo
 	@Transactional
 	@Modifying
 	@Query(value = "UPDATE empleado_entity SET estado = ? WHERE id = ?", nativeQuery = true)
-	int updateEmpleadoSetEstadoForId(boolean estado, long id);
+	void updateEmpleadoSetEstadoForId(boolean estado, long id);
 }

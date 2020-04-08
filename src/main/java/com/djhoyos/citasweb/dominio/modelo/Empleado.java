@@ -1,6 +1,5 @@
 package com.djhoyos.citasweb.dominio.modelo;
 
-import com.djhoyos.citasweb.aplicacion.comando.ComandoPersona;
 import com.djhoyos.citasweb.dominio.utilidades.Validaciones;
 
 public class Empleado {
@@ -20,10 +19,6 @@ public class Empleado {
         this.persona = persona;
         this.estado = estado;
     }
-
-    public Empleado(long id, int porcentaje, ComandoPersona persona, boolean estado) {
-    }
-
 
 	public long getId() {
         return id;

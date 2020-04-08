@@ -10,12 +10,12 @@ import com.djhoyos.citasweb.dominio.excepcion.ExcepcionesDominio;
 
 public class PersonaTest {
     
-	Documento documento;
+	Identificacion documento;
     
     @BeforeEach
     public void before(){
         new TestDataBuilder();
-        documento = new Documento();
+        documento = new Identificacion();
         documento.setId(1);
         documento.setTipo("Nit");    
     }
@@ -24,7 +24,7 @@ public class PersonaTest {
     public void crearObjetoPersona(){
         Persona persona = new Persona();
         persona.setId(1);
-        persona.setTipoDocumento(documento);
+        persona.setIdentificacion(documento);;
         persona.setDocumento("107783245");
         persona.setNombre("Jose fernando petro");
         persona.setCelular("3124567809");

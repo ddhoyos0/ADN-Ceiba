@@ -19,13 +19,13 @@ class PersonaEntityTest {
 	
 	public TestDataBuilder datos;
 	public Persona persona;
-	public DocumentoEntity documentoEntity;
+	public IdentificacionEntity documentoEntity;
 	@BeforeEach
 	public void inicio() {
 		datos = new TestDataBuilder();
 		persona = new Persona();
 		personaEntity = new PersonaEntity();
-		documentoEntity = new DocumentoEntity(1,"Celular de ciudadania");
+		documentoEntity = new IdentificacionEntity(1,"Celular de ciudadania");
 	}
      
     @Test
@@ -39,7 +39,7 @@ class PersonaEntityTest {
 	public void validarMetodoSet(){
 		PersonaEntity persona = new PersonaEntity();
 		persona.setId(1);
-		persona.setTipo_documento(documentoEntity);
+		persona.setIdentificacion(documentoEntity);
 		persona.setDocumento("1066732570");
 		persona.setNombre("jose cantillo");
 		persona.setDireccion("Calle 67 # 42-34");
@@ -47,7 +47,7 @@ class PersonaEntityTest {
 		persona.setEmail("jose@gmail.com");
 		persona.setEstado(false);
 		assertEquals(1, persona.getId());
-		assertEquals(documentoEntity, persona.getTipo_documento());
+		assertEquals(documentoEntity, persona.getIdentificacion());
 		assertEquals("1066732570", persona.getDocumento());
 		assertEquals("jose cantillo",persona.getNombre());
 		assertEquals("Calle 67 # 42-34",persona.getDireccion());

@@ -1,11 +1,9 @@
 package com.djhoyos.citasweb.dominio.modelo;
-
-import com.djhoyos.citasweb.aplicacion.comando.ComandoTipoDocumento;
 import com.djhoyos.citasweb.dominio.utilidades.Validaciones;
 
 public class Persona {
 	private long id;
-	private Documento tipoDocumento;
+	private Identificacion identificacion;
 	private String documento;
 	private String nombre;
 	private String celular;
@@ -16,15 +14,14 @@ public class Persona {
 	public Persona() {		
 	}
 	
-	public Persona(long id, Documento tipoDocumento, String documento, String nombre, String celular, String direccion,
-			String email, boolean estado) {
-		Validaciones.validarNoVacio(tipoDocumento, "Tipo documento es un campo obligatorio");
+	public Persona(long id, Identificacion identificacion, String documento, String nombre, String celular,
+			String direccion, String email, boolean estado) {
+		Validaciones.validarNoVacio(identificacion, "Tipo documento es un campo obligatorio");
 		Validaciones.validarNoVacio(documento, "Documento es un campo obligatorio");
 		Validaciones.validarNoVacio(nombre, "Nombre es un campo obligatorio");
 		Validaciones.validarNoVacio(celular, "El Celular es un campo obligatorio");
-		
 		this.id = id;
-		this.tipoDocumento = tipoDocumento;
+		this.identificacion = identificacion;
 		this.documento = documento;
 		this.nombre = nombre;
 		this.celular = celular;
@@ -32,10 +29,6 @@ public class Persona {
 		this.email = email;
 		this.estado = estado;
 	}
-
-
-	public Persona(long id, ComandoTipoDocumento tipoDocumento, String documento, String nombre, String celular,
-			String direccion, String email, boolean estado) {}
 
 	public long getId() {
 		return id;
@@ -45,13 +38,12 @@ public class Persona {
 		this.id = id;
 	}
 
-
-	public Documento getTipoDocumento() {
-		return tipoDocumento;
+	public Identificacion getIdentificacion() {
+		return identificacion;
 	}
 
-	public void setTipoDocumento(Documento tipoDocumento) {
-		this.tipoDocumento = tipoDocumento;
+	public void setIdentificacion(Identificacion identificacion) {
+		this.identificacion = identificacion;
 	}
 
 	public String getDocumento() {

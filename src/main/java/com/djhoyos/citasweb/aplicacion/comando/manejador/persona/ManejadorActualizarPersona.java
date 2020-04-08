@@ -1,10 +1,10 @@
 package com.djhoyos.citasweb.aplicacion.comando.manejador.persona;
 
+import org.springframework.stereotype.Component;
+
 import com.djhoyos.citasweb.aplicacion.comando.ComandoPersona;
 import com.djhoyos.citasweb.aplicacion.comando.fabrica.FabricaPersona;
-import com.djhoyos.citasweb.dominio.modelo.Persona;
 import com.djhoyos.citasweb.dominio.servicio.persona.ServicioActualizarPersona;
-import org.springframework.stereotype.Component;
 
 @Component
 public class ManejadorActualizarPersona {
@@ -14,7 +14,6 @@ public class ManejadorActualizarPersona {
     }
 
     public void actualiza(ComandoPersona comandoPersona) {
-        Persona persona = FabricaPersona.modelo(comandoPersona);
-        servicio.actualizar(persona);
+        servicio.actualizar(FabricaPersona.modelo(comandoPersona));
     }
 }

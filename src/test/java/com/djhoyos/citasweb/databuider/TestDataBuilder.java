@@ -8,19 +8,14 @@ import com.djhoyos.citasweb.aplicacion.comando.ComandoCita;
 import com.djhoyos.citasweb.aplicacion.comando.ComandoEmpleado;
 import com.djhoyos.citasweb.aplicacion.comando.ComandoPersona;
 import com.djhoyos.citasweb.aplicacion.comando.ComandoServicio;
-import com.djhoyos.citasweb.aplicacion.comando.ComandoTipoDocumento;
+import com.djhoyos.citasweb.aplicacion.comando.ComandoIdentificacion;
 import com.djhoyos.citasweb.aplicacion.comando.ComandoVenta;
 import com.djhoyos.citasweb.dominio.modelo.Cita;
 import com.djhoyos.citasweb.dominio.modelo.Empleado;
+import com.djhoyos.citasweb.dominio.modelo.Identificacion;
 import com.djhoyos.citasweb.dominio.modelo.Persona;
 import com.djhoyos.citasweb.dominio.modelo.Servicio;
 import com.djhoyos.citasweb.dominio.modelo.Venta;
-import com.djhoyos.citasweb.infraestructura.adaptador_jpa.entidades.CitaEntity;
-import com.djhoyos.citasweb.infraestructura.adaptador_jpa.entidades.DocumentoEntity;
-import com.djhoyos.citasweb.infraestructura.adaptador_jpa.entidades.EmpleadoEntity;
-import com.djhoyos.citasweb.infraestructura.adaptador_jpa.entidades.PersonaEntity;
-import com.djhoyos.citasweb.infraestructura.adaptador_jpa.entidades.ServicioEntity;
-import com.djhoyos.citasweb.infraestructura.adaptador_jpa.entidades.VentaEntity;
 
 public class TestDataBuilder {
 	/**
@@ -29,16 +24,16 @@ public class TestDataBuilder {
 	private static final String TIPO = "Cedula de ciudadania";
 
 	/**
-	 * objeto Documento
+	 * objeto ComandoDocumento
 	 */
-	public ComandoTipoDocumento buildDocumento() {
-		return new ComandoTipoDocumento(1, TIPO);
+	public ComandoIdentificacion buildComandoDocumento() {
+		return new ComandoIdentificacion(1, TIPO);
 	}
 	/**
-	 * objeto DocumentoEntity
+	 * objeto Documento
 	 */
-	public DocumentoEntity buildDocumentoEntity() {
-		return new DocumentoEntity(1, TIPO);
+	public Identificacion buildDocumento() {
+		return new Identificacion(1, TIPO);
 	}
 	/**
 	 * Objeto ComandoPersona
@@ -51,7 +46,7 @@ public class TestDataBuilder {
 	private static final String DIRECCION = "Calle 25 #32-54";
 
 	public ComandoPersona buildComandoPersona() {
-		return new ComandoPersona(1, buildDocumento(), NUMERO, NOMBRE, CELULAR, DIRECCION, EMAIL, false);
+		return new ComandoPersona(1, buildComandoDocumento(), NUMERO, NOMBRE, CELULAR, DIRECCION, EMAIL, false);
 	}
 
 	/**
@@ -62,13 +57,7 @@ public class TestDataBuilder {
 				"carlos@gmail.com", false);
 	}
 
-	/**
-	 * objeto PersonaEntity
-	 */
-	public PersonaEntity buildPersonaEntity() {
-		return new PersonaEntity(1, buildDocumentoEntity(), "10778324", "carlos ramos", "3225467890", "calle 34 # 43-34",
-				"carlos@gmail.com", false);
-	}
+
 	/**
 	 * Objeto ComandoEmpleado
 	 * 
@@ -83,12 +72,6 @@ public class TestDataBuilder {
 	 */
 	public Empleado buildEmpleado() {
 		return new Empleado(1, PORCENTAJE, buildPersona(), false);
-	}
-	/**
-	 * objeto EmpleadoEntity
-	 */
-	public EmpleadoEntity buildEmpleadoEntity() {
-		return new EmpleadoEntity(1, PORCENTAJE, buildPersonaEntity(), false);
 	}
 
 	/**
@@ -110,14 +93,6 @@ public class TestDataBuilder {
 		return new Servicio(1, "Pedicure", 15000, false);
 	}
 	
-	/**
-	 * objecto ServicioEntity
-	 * @return
-	 */
-
-	public ServicioEntity buildServicioEntity() {
-		return new ServicioEntity(1, "Pedicure", 15000, false);
-	}
 
 	/**
 	 * Objeto ComandoCita
@@ -134,16 +109,7 @@ public class TestDataBuilder {
 	public Cita buildCita() {
 		return new Cita(1, LocalDateTime.of(2020, Month.DECEMBER, 30, 15, 30, 0), buildPersona(), buildEmpleado(),
 				buildServicio(), false);
-	}
-
-	/**
-	 *  Creacion de objeto CitaEntity
-	 */
-	public CitaEntity buildCitaEntity() {
-		return new CitaEntity(1, LocalDateTime.of(2020, Month.DECEMBER, 30, 15, 30, 0), buildPersonaEntity(), buildEmpleadoEntity(),
-				buildServicioEntity(), false);
-	}
-	
+	}	
 	/**
 	 * Objeto ComandoVenta 
 	 * @return
@@ -159,10 +125,5 @@ public class TestDataBuilder {
 		return new Venta(1, LocalDate.now(), buildCita(), 10000, 10000, 20000, false);
 	}
 	
-	/**
-	 * objeto VentaEntity
-	 */
-	public VentaEntity buildVentaEntiy() {
-		return new VentaEntity(1, LocalDate.now(), buildCitaEntity(), 10000, 10000, 20000, false);
-	}
+
 }

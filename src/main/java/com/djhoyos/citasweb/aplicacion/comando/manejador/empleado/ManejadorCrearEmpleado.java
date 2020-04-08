@@ -14,7 +14,6 @@ public class ManejadorCrearEmpleado {
     }
 
     public Empleado crear(ComandoEmpleado comando) {
-        Empleado empleado = FabricaEmpleado.modelo(comando);
-        return this.servicio.crear(empleado);
+        return this.servicio.crear(FabricaEmpleado.modelo(comando));
     }
 }

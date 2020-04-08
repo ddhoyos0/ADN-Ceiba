@@ -17,5 +17,5 @@ public interface RepositorioServicioJpa extends JpaRepository<ServicioEntity, Lo
 	@Transactional
 	@Modifying
 	@Query(value = "UPDATE servicios SET estado = ? WHERE id = ?", nativeQuery = true)
-	int updateServicioSetEstadoForId(boolean estado, long id);
+	void updateServicioSetEstadoForId(boolean estado, long id);
 }

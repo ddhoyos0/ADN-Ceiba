@@ -8,22 +8,21 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "documentos")
+@Table(name = "identificacion")
 @Inheritance( strategy = InheritanceType.SINGLE_TABLE )
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class DocumentoEntity{
-
+public class IdentificacionEntity{
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     private String tipo;
+    
+	public IdentificacionEntity(long id, String tipo) {}
+
+	public IdentificacionEntity() {}
 
 }

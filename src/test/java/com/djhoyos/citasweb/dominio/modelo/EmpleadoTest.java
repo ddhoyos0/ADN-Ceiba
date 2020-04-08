@@ -11,11 +11,11 @@ public class EmpleadoTest {
     @Autowired
     private TestDataBuilder dataBuilder;
     Empleado empleado;
-    Documento documento;
+    Identificacion documento;
     @BeforeEach
     public void before(){
         dataBuilder = new TestDataBuilder();
-        documento = new Documento();
+        documento = new Identificacion();
         documento.setId(1);
         documento.setTipo("Nit");
     }

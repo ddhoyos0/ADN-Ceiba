@@ -2,9 +2,6 @@ package com.djhoyos.citasweb.dominio.modelo;
 
 import java.time.LocalDateTime;
 
-import com.djhoyos.citasweb.aplicacion.comando.ComandoEmpleado;
-import com.djhoyos.citasweb.aplicacion.comando.ComandoPersona;
-import com.djhoyos.citasweb.aplicacion.comando.ComandoServicio;
 import com.djhoyos.citasweb.dominio.utilidades.Validaciones;
 
 public class Cita {
@@ -33,12 +30,7 @@ public class Cita {
     public Cita() {
 
     }
-
-    public Cita(long id, LocalDateTime fecha, ComandoPersona persona, ComandoEmpleado empleado,
-			ComandoServicio servicio, boolean estado) {
-    	
-	}
-
+    
 	public long getId() {
         return id;
     }

@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
-public class DocumentoTest {
+public class IdentificacionTest {
 
     @Autowired
     private TestDataBuilder dataBuilder;
@@ -25,6 +25,6 @@ public class DocumentoTest {
 
     @Test
     public void validarCampoTipoNoVacio(){
-        Assertions.assertThrows(ExcepcionesDominio.class, () -> new Documento(1,null), "El tipo de documento no puede ser vacio");
+        Assertions.assertThrows(ExcepcionesDominio.class, () -> new Identificacion(1,null), "El tipo de documento no puede ser vacio");
     }
 }

@@ -14,7 +14,6 @@ public class ManejadorActualizarServicio {
     }
 
     public Servicio actualiza(ComandoServicio comando) {
-        Servicio servicio = FabricaServicio.modelo(comando);
-        return this.servicio.actualizar(servicio);
+        return this.servicio.actualizar(FabricaServicio.modelo(comando));
     }
 }

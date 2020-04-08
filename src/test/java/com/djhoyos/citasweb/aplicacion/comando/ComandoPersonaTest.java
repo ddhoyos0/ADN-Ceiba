@@ -19,7 +19,7 @@ public class ComandoPersonaTest {
 
     @Test
     void gettersPersona() {
-        assertNull(comando.getTipo_documento());
+        assertNull(comando.getIdentificacion());
         assertNull(comando.getDocumento());
         assertNull(comando.getNombre());
         assertNull(comando.getCelular());

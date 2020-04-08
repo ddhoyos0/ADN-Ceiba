@@ -17,5 +17,5 @@ public interface RepositorioVentaJpa extends JpaRepository<VentaEntity, Long> {
 	@Transactional
 	@Modifying
 	@Query(value = "UPDATE ventas SET estado = ? WHERE id = ?", nativeQuery = true)
-	int updateVentaSetEstadoForId(boolean estado, long id);
+	void updateVentaSetEstadoForId(boolean estado, long id);
 }

@@ -13,8 +13,7 @@ public class ManejadorCrearServicio {
         this.servicio = servicio;
     }
 
-    public Servicio crear(ComandoServicio comando) {
-        Servicio servicio = FabricaServicio.modelo(comando);
-        return this.servicio.crear(servicio);
+    public Servicio crear(ComandoServicio comando) {    
+        return this.servicio.crear(FabricaServicio.modelo(comando));
     }
 }

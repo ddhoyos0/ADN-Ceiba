@@ -13,8 +13,7 @@ public class ManejadorActualizarCita {
         this.servicio = servicio;
     }
 
-    public Cita actualiza(ComandoCita comando) {
-        Cita cita = FabricaCita.modelo(comando);
-        return this.servicio.actualizar(cita);
+    public Cita actualiza(ComandoCita comando) {     
+        return this.servicio.actualizar(FabricaCita.modelo(comando));
     }
 }

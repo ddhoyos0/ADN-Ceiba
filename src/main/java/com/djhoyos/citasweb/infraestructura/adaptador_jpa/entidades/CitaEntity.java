@@ -13,15 +13,11 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "citas")
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class CitaEntity{
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)

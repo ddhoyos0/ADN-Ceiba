@@ -14,7 +14,6 @@ public class ManejadorActualizarEmpleado {
     }
 
     public Empleado actualiza(ComandoEmpleado comando) {
-        Empleado empleado = FabricaEmpleado.modelo(comando);
-        return this.servicio.actualizar(empleado);
+        return this.servicio.actualizar(FabricaEmpleado.modelo(comando));
     }
 }

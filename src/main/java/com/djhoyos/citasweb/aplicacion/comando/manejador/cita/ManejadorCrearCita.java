@@ -14,8 +14,7 @@ public class ManejadorCrearCita {
         this.servicio = servicio;
     }
 
-    public Cita crear(ComandoCita comando) {
-        Cita cita = FabricaCita.modelo(comando);
-        return this.servicio.crear(cita);
+    public Cita crear(ComandoCita comando) {  
+        return this.servicio.crear(FabricaCita.modelo(comando));
     }
 }

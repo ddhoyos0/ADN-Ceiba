@@ -10,12 +10,12 @@ import org.springframework.stereotype.Component;
 public class ManejadorCrearPersona {
 
     private final ServicioCrearPersona servicio;
+    
     public ManejadorCrearPersona(ServicioCrearPersona servicio) {
         this.servicio = servicio;
     }
 
     public Persona ejecutar(ComandoPersona comandoPersona) {
-        Persona persona = FabricaPersona.modelo(comandoPersona);
-        return this.servicio.crear(persona);
+        return servicio.crear( FabricaPersona.modelo(comandoPersona));
     }
 }

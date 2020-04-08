@@ -8,16 +8,12 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "servicios")
 @Inheritance( strategy = InheritanceType.SINGLE_TABLE )
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class ServicioEntity {
    
 	@Id

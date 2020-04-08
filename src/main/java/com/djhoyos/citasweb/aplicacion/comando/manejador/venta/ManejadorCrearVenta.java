@@ -15,7 +15,6 @@ public class ManejadorCrearVenta {
     }
 
     public Venta crear(ComandoVenta comando) {
-        Venta venta = FabricaVenta.modelo(comando);
-        return this.servicio.crear(venta);
+        return this.servicio.crear(FabricaVenta.modelo(comando));
     }
 }
