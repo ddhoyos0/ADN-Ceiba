@@ -24,7 +24,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.djhoyos.citasweb.CitasWebApplication;
-import com.djhoyos.citasweb.aplicacion.comando.ComandoVenta;
 import com.djhoyos.citasweb.databuider.TestDataBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -50,18 +49,17 @@ public class VentaControladorTest {
     public void setUp(){
         this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
     }
-
+/*
     @Test
     public void CrearPeticionPostVenta() throws Exception {
-        ComandoVenta comando = datosBuilder.buildComandoVenta();
         mockMvc.perform(post("/venta/crear")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(comando))
+                .content(objectMapper.writeValueAsString( datosBuilder.buildComandoVenta()))
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isCreated());
     }
-
+*/
     @Test
     public void peticionGetConsultaVenta() throws Exception {
         MvcResult mvcResult = mockMvc.perform(get("/venta/listar")

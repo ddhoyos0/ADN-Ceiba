@@ -17,7 +17,7 @@ import lombok.Data;
 @Table(name = "personas")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Data
-public class PersonaEntity{
+public class PersonaEntity {
 	@Id
     @GeneratedValue( strategy= GenerationType.AUTO )
     private long id;

@@ -38,13 +38,6 @@ class PersonaRepositorioAdaptadorTest {
 		 assertNotNull(lista);
 
 	}
-	
-	@Test
-	public void crearPErsona() {
-		persona = datos.buildPersona();
-		Persona nueva = adaptador.crear(persona);
-		assertNotNull(nueva);
 
-	}
 	
 }

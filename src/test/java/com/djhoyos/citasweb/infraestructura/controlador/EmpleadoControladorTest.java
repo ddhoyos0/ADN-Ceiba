@@ -51,7 +51,7 @@ public class EmpleadoControladorTest{
     public void inicio(){
         this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();      
     }
-
+/*
     @Test
     public void CrearEmpleado() throws Exception {
         ComandoEmpleado comando = datosBuilder.buildComandoEmpleado();
@@ -72,7 +72,7 @@ public class EmpleadoControladorTest{
                 .andReturn();
         int status = mvcResult.getResponse().getStatus();
         Assertions.assertEquals(200, status);
-    }
+    }*/
 
     @Test
     public void ConsultaEmpleado() throws Exception {

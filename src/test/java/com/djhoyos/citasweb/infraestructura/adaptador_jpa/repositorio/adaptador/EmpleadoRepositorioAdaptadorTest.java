@@ -39,15 +39,7 @@ class EmpleadoRepositorioAdaptadorTest {
 		 List<Empleado> lista = adaptador.listar();
 		 assertNotNull(lista);
 
-	}
-	
-	@Test
-	public void crearEmpleado() {
-		empleado = datos.buildEmpleado();
-		Empleado nueva = adaptador.crear(empleado);
-		assertNotNull(nueva);
-
-	}
+	}	
 		
 
 }

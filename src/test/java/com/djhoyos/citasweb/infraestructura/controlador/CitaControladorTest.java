@@ -49,6 +49,7 @@ public class CitaControladorTest {
 	public void inicio() {
 		mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
 	}
+	/**
 
 	@Test
 	public void CrearCita() throws Exception {	
@@ -64,7 +65,7 @@ public class CitaControladorTest {
 		int status = mvcResult.getResponse().getStatus();
 		Assertions.assertEquals(200, status);
 	}
-
+*/
 	@Test
 	public void ConsultaCita() throws Exception {
 		MvcResult mvcResult = mockMvc

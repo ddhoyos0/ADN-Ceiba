@@ -1,9 +1,8 @@
 package com.djhoyos.citasweb.dominio.modelo;
 
-import com.djhoyos.citasweb.aplicacion.comando.ComandoCita;
-import com.djhoyos.citasweb.dominio.utilidades.Validaciones;
-
 import java.time.LocalDate;
+
+import com.djhoyos.citasweb.dominio.utilidades.Validaciones;
 
 public class Venta {
     private long id;
@@ -26,9 +25,6 @@ public class Venta {
         this.comision = comision;
         this.total = total;
         this.estado = estado;
-    }
-
-    public Venta(long id, LocalDate fecha, ComandoCita cita, int utilidad, int comision, int total, boolean estado) {
     }
 
     public long getId() {
