@@ -15,7 +15,7 @@ public class Persona {
 	}
 	
 	public Persona(long id, Identificacion identificacion, String documento, String nombre, String celular,
-			String direccion, String email, boolean estado) {
+			String direccion, String email) {
 		Validaciones.validarNoVacio(identificacion, "Tipo documento es un campo obligatorio");
 		Validaciones.validarNoVacio(documento, "Documento es un campo obligatorio");
 		Validaciones.validarNoVacio(nombre, "Nombre es un campo obligatorio");
@@ -26,8 +26,7 @@ public class Persona {
 		this.nombre = nombre;
 		this.celular = celular;
 		this.direccion = direccion;
-		this.email = email;
-		this.estado = estado;
+		this.email = email;		
 	}
 
 	public long getId() {

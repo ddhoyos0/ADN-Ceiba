@@ -25,7 +25,7 @@ public class EmpleadoTest {
         empleado = new Empleado();
         empleado.setPersona(dataBuilder.buildPersona());
         empleado.setPorcentaje(50);
-        Assertions.assertEquals(empleado.getPorcentaje(),50);
+        Assertions.assertEquals(50, empleado.getPorcentaje());
     }
 
     @Test

@@ -25,6 +25,6 @@ public class VentaTest {
         venta.setUtilidad(10000);
         venta.setTotal(20000);
         venta.setEstado(false);
-        Assertions.assertEquals(venta.getComision(),10000);
+        Assertions.assertEquals(10000, venta.getComision());
     }
 }

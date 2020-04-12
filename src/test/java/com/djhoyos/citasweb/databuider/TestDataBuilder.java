@@ -56,7 +56,7 @@ public class TestDataBuilder {
 	 */
 	public Persona buildPersona() {
 		return new Persona(3, buildDocumento(), "10778324", "carlos ramos", "3225467890", "calle 34 # 43-34",
-				"carlos@gmail.com", false);
+				"carlos@gmail.com");
 	}
 
 

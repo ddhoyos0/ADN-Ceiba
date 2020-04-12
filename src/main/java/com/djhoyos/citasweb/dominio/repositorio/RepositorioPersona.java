@@ -9,13 +9,7 @@ public interface RepositorioPersona {
      * metodo utilizado para crear Persona
      * @param persona
      */
-    public void crear(Persona persona);
-
-    /**
-     * metodo utilizado para actualizar persona
-     * @param
-     */
-    public void actualizar(Persona persona);
+    public void crear(Persona persona); 
 
     /**
      * metodo utilizado para eliminar persona

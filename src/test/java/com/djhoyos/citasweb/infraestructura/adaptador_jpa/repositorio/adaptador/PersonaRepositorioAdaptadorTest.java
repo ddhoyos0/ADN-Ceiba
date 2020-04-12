@@ -51,7 +51,7 @@ class PersonaRepositorioAdaptadorTest {
 	@Sql(scripts = "/datos.sql", executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
 	public void actualizarPersona() {
 		Persona persona = datos.buildPersona();
-		adaptador.actualizar(persona);
+		adaptador.crear(persona);
 		assertTrue(adaptador.listar().size() > 0);
 	}
 

@@ -26,13 +26,7 @@ public class PersonaRepositorioAdaptador implements RepositorioPersona {
     public void crear(Persona persona) {     	
         PersonaEntity personaEntity = modelMapper.map(persona, PersonaEntity.class);        
         repositorioJpa.save(personaEntity);
-    }
-
-    @Override
-    public void actualizar(Persona persona) {
-        PersonaEntity personaEntity = modelMapper.map(persona, PersonaEntity.class);
-        repositorioJpa.save(personaEntity);
-    }
+    }  
 
     @Override
     public void eliminar(long id) {

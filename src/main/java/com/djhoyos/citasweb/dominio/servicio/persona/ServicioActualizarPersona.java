@@ -11,6 +11,6 @@ public class ServicioActualizarPersona {
     }
 
     public void actualizar(Persona persona){
-       repositorio.actualizar(persona);
+       repositorio.crear(persona);
     }
 }

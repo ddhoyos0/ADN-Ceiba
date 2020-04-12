@@ -39,17 +39,17 @@ public class PersonaTest {
     @Test
     public void validarcampoDocumentoNoNulo(){
         Assertions.assertThrows(ExcepcionesDominio.class, () -> 
-        new Persona(1,documento,null,"Calor ramos","30087665252","Calle 45 # 23-12","admn@gmail.com",false), "Documento es un campo obligatorio");
+        new Persona(1,documento,null,"Calor ramos","30087665252","Calle 45 # 23-12","admn@gmail.com"), "Documento es un campo obligatorio");
     }
     
     @Test
     public void validarcampoNombreNoNulo(){
         Assertions.assertThrows(ExcepcionesDominio.class, () -> 
-        new Persona(1,documento,"1066723254",null,"30087665252","Calle 45 # 23-12","admn@gmail.com",false), "Nombre es un campo obligatorio");
+        new Persona(1,documento,"1066723254",null,"30087665252","Calle 45 # 23-12","admn@gmail.com"), "Nombre es un campo obligatorio");
     }
     @Test
     public void validarcampoCelularNoNulo(){
         Assertions.assertThrows(ExcepcionesDominio.class, () -> 
-        new Persona(1,documento,"1066723254","jorege murillo",null,"Calle 45 # 23-12","admn@gmail.com",false), "El Celular es un campo obligatorio");
+        new Persona(1,documento,"1066723254","jorege murillo",null,"Calle 45 # 23-12","admn@gmail.com"), "El Celular es un campo obligatorio");
     }
 }
