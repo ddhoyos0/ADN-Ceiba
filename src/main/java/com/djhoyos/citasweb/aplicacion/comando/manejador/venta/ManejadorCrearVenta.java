@@ -4,7 +4,6 @@ import org.springframework.stereotype.Component;
 
 import com.djhoyos.citasweb.aplicacion.comando.ComandoVenta;
 import com.djhoyos.citasweb.aplicacion.comando.fabrica.FabricaVenta;
-import com.djhoyos.citasweb.dominio.modelo.Venta;
 import com.djhoyos.citasweb.dominio.servicio.venta.ServicioCrearVenta;
 
 @Component
@@ -14,7 +13,7 @@ public class ManejadorCrearVenta {
         this.servicio = servicio;
     }
 
-    public Venta crear(ComandoVenta comando) {
-        return this.servicio.crear(FabricaVenta.modelo(comando));
+    public void crear(ComandoVenta comando) {
+        this.servicio.crear(FabricaVenta.modelo(comando));
     }
 }

@@ -20,7 +20,7 @@ public class IdentificacionTest {
 
     @Test
     public void tipo() {
-        Assertions.assertEquals("Cedula de ciudadania", dataBuilder.buildDocumento().getTipo());
+        Assertions.assertEquals("Cedula de Ciudadanía", dataBuilder.buildDocumento().getTipo());
     }
 
     @Test

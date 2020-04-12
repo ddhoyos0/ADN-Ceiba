@@ -10,8 +10,8 @@ public class ServicioCrearEmpleado {
         this.repositorio = repositorio;
     }
 
-    public Empleado crear(Empleado empleado) {       
-        return this.repositorio.crear(empleado);
+    public void crear(Empleado empleado) {       
+        this.repositorio.crear(empleado);
     }
 
    

@@ -11,8 +11,8 @@ public class ServicioCrearCita {
         this.repositorio = repositorio;
     }
 
-    public Cita crear(Cita cita) {      	
-        return this.repositorio.crear(cita);
+    public void crear(Cita cita) {      	
+        this.repositorio.crear(cita);
     } 
   
 	

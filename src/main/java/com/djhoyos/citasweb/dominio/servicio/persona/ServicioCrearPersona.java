@@ -11,8 +11,8 @@ public class ServicioCrearPersona {
         this.repositorio = repositorio;
     }
 
-    public Persona crear(Persona persona) {  
-       return repositorio.crear(persona);
+    public void crear(Persona persona) {  
+       repositorio.crear(persona);
     }
 
 

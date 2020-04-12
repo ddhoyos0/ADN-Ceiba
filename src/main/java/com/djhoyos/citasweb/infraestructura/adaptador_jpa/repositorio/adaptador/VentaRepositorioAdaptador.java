@@ -22,9 +22,9 @@ public class VentaRepositorioAdaptador implements RepositorioVenta {
 	}
 
 	@Override
-	public Venta crear(Venta venta) {
+	public void crear(Venta venta) {
 		VentaEntity ventaEntity = modelMapper.map(venta, VentaEntity.class);
-		return modelMapper.map(this.repositorioJpa.save(ventaEntity), Venta.class);
+		repositorioJpa.save(ventaEntity);
 	}
 
 	@Override

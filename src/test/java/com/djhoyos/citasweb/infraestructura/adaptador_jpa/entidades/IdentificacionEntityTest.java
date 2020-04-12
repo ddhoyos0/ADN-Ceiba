@@ -33,7 +33,7 @@ class IdentificacionEntityTest {
     @Test
     public void validarEntidadCita() {
     	documentoEntity = modelMapper.map(documento, IdentificacionEntity.class);
-        assertEquals(documento.getId(), documentoEntity.getId());
+        assertEquals(documento.getTipo(), documentoEntity.getTipo());
     }
 
     @Test

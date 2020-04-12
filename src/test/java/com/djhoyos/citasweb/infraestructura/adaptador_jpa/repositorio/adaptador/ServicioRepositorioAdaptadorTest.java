@@ -39,11 +39,4 @@ class ServicioRepositorioAdaptadorTest {
 
 	}
 	
-	@Test
-	public void crearServicio() {
-		servicio = datos.buildServicio();
-		Servicio nueva = adaptador.crear(servicio);
-		assertNotNull(nueva);
-
-	}
 }

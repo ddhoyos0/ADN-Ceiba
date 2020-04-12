@@ -32,7 +32,7 @@ class PersonaEntityTest {
     public void validarLaEntidadCita() {
     	persona = datos.buildPersona();
     	personaEntity = modelMapper.map(persona, PersonaEntity.class);
-        assertEquals(persona.getId(), personaEntity.getId());
+        assertEquals(persona.getCelular(), personaEntity.getCelular());
     }
 
     @Test
@@ -46,7 +46,6 @@ class PersonaEntityTest {
 		persona.setCelular("3006557432");
 		persona.setEmail("jose@gmail.com");
 		persona.setEstado(false);
-		assertEquals(1, persona.getId());
 		assertEquals(documentoEntity, persona.getIdentificacion());
 		assertEquals("1066732570", persona.getDocumento());
 		assertEquals("jose cantillo",persona.getNombre());

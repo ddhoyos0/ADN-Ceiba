@@ -10,8 +10,8 @@ public class ServicioActualizarCita {
         this.repositorio = repositorio;
     }
 
-    public Cita actualizar(Cita cita){
-        return repositorio.crear(cita);
+    public void actualizar(Cita cita){
+        repositorio.crear(cita);
     }
 
 }

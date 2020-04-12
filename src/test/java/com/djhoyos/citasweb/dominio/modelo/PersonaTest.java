@@ -24,7 +24,7 @@ public class PersonaTest {
     public void crearObjetoPersona(){
         Persona persona = new Persona();
         persona.setId(1);
-        persona.setIdentificacion(documento);;
+        persona.setIdentificacion(documento);
         persona.setDocumento("107783245");
         persona.setNombre("Jose fernando petro");
         persona.setCelular("3124567809");

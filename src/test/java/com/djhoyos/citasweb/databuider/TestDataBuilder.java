@@ -6,9 +6,9 @@ import java.time.Month;
 
 import com.djhoyos.citasweb.aplicacion.comando.ComandoCita;
 import com.djhoyos.citasweb.aplicacion.comando.ComandoEmpleado;
+import com.djhoyos.citasweb.aplicacion.comando.ComandoIdentificacion;
 import com.djhoyos.citasweb.aplicacion.comando.ComandoPersona;
 import com.djhoyos.citasweb.aplicacion.comando.ComandoServicio;
-import com.djhoyos.citasweb.aplicacion.comando.ComandoIdentificacion;
 import com.djhoyos.citasweb.aplicacion.comando.ComandoVenta;
 import com.djhoyos.citasweb.dominio.modelo.Cita;
 import com.djhoyos.citasweb.dominio.modelo.Empleado;
@@ -18,10 +18,12 @@ import com.djhoyos.citasweb.dominio.modelo.Servicio;
 import com.djhoyos.citasweb.dominio.modelo.Venta;
 
 public class TestDataBuilder {
+
+	
 	/**
 	 * Objeto Documento
 	 */
-	private static final String TIPO = "Cedula de ciudadania";
+	private static final String TIPO = "Cedula de Ciudadanía";
 
 	/**
 	 * objeto ComandoDocumento
@@ -46,14 +48,14 @@ public class TestDataBuilder {
 	private static final String DIRECCION = "Calle 25 #32-54";
 
 	public ComandoPersona buildComandoPersona() {
-		return new ComandoPersona(1, buildComandoDocumento(), NUMERO, NOMBRE, CELULAR, DIRECCION, EMAIL, false);
+		return new ComandoPersona(1,buildDocumento(), NUMERO, NOMBRE, CELULAR, DIRECCION, EMAIL, false);
 	}
 
 	/**
 	 * objeto Persona
 	 */
 	public Persona buildPersona() {
-		return new Persona(1, buildDocumento(), "10778324", "carlos ramos", "3225467890", "calle 34 # 43-34",
+		return new Persona(3, buildDocumento(), "10778324", "carlos ramos", "3225467890", "calle 34 # 43-34",
 				"carlos@gmail.com", false);
 	}
 
@@ -64,7 +66,7 @@ public class TestDataBuilder {
 	 * @return
 	 */
 	public ComandoEmpleado buildComandoEmpleado() {
-		return new ComandoEmpleado(1, PORCENTAJE, buildComandoPersona(), false);
+		return new ComandoEmpleado(1, PORCENTAJE, buildPersona(), false);
 	}
 
 	/**
@@ -90,7 +92,7 @@ public class TestDataBuilder {
 	 */
 
 	public Servicio buildServicio() {
-		return new Servicio(1, "Pedicure", 15000, false);
+		return new Servicio(2, "Pedicure", 15000, false);
 	}
 	
 
@@ -100,7 +102,7 @@ public class TestDataBuilder {
 	private static final LocalDateTime FECHA = LocalDateTime.of(2020, Month.DECEMBER, 30, 15, 30, 00);
 
 	public ComandoCita buildComandoCita() {
-		return new ComandoCita(1, FECHA, buildComandoPersona(), buildComandoEmpleado(), buildComandoServicio(), false);
+		return new ComandoCita(1, FECHA, buildPersona(), buildEmpleado(), buildServicio(), false);
 	}
 
 	/**
@@ -115,7 +117,7 @@ public class TestDataBuilder {
 	 * @return
 	 */
 	public ComandoVenta buildComandoVenta() {
-		return new ComandoVenta(1, LocalDate.now(), buildComandoCita(), 12000, 12000, 22000, false);
+		return new ComandoVenta(1, LocalDate.now(), buildCita(), 12000, 12000, 22000, false);
 	}
 
 	/**

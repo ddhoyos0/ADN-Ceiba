@@ -15,9 +15,9 @@ public final class FabricaCita {
 		return new Cita(
 				comando.getId(),
 				comando.getFecha(),
-				FabricaPersona.modelo(comando.getPersona()),
-				FabricaEmpleado.modelo(comando.getEmpleado()),
-				FabricaServicio.modelo(comando.getServicio()),
+				comando.getPersona(),
+				comando.getEmpleado(),
+				comando.getServicio(),
 				comando.isEstado());
 	}
 

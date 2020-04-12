@@ -13,32 +13,32 @@ import java.util.List;
 @Repository
 public class EmpleadoRepositorioAdaptador implements RepositorioEmpleado {
 
-    private final RepositorioEmpleadoJpa repositorioJpa;
-    private ModelMapper modelMapper = new ModelMapper();
+	private final RepositorioEmpleadoJpa repositorioJpa;
+	private ModelMapper modelMapper = new ModelMapper();
 
-    public EmpleadoRepositorioAdaptador(RepositorioEmpleadoJpa repositorioJpa) {
-        this.repositorioJpa = repositorioJpa;
-    }
+	public EmpleadoRepositorioAdaptador(RepositorioEmpleadoJpa repositorioJpa) {
+		this.repositorioJpa = repositorioJpa;
+	}
 
-    @Override
-    public Empleado crear(Empleado empleado) {
-        EmpleadoEntity empleadoEntity = modelMapper.map(empleado, EmpleadoEntity.class);
-        return modelMapper.map(this.repositorioJpa.save(empleadoEntity), Empleado.class);
-    }
+	@Override
+	public void crear(Empleado empleado) {
+		EmpleadoEntity empleadoEntity = modelMapper.map(empleado, EmpleadoEntity.class);
+		this.repositorioJpa.save(empleadoEntity);
+	}
 
-    @Override
-    public List<Empleado> listar() {
-        List<EmpleadoEntity> repositorio = repositorioJpa.findByEstado(false);
-        List<Empleado> empleado = new ArrayList<>();
+	@Override
+	public List<Empleado> listar() {
+		List<EmpleadoEntity> repositorio = repositorioJpa.findByEstado(false);
+		List<Empleado> empleado = new ArrayList<>();
 
-        for (EmpleadoEntity empleadoEntity : repositorio) {
-            empleado.add(modelMapper.map(empleadoEntity, Empleado.class));
-        }
-        return empleado;
-    }
+		for (EmpleadoEntity empleadoEntity : repositorio) {
+			empleado.add(modelMapper.map(empleadoEntity, Empleado.class));
+		}
+		return empleado;
+	}
 
-    @Override
-    public void eliminar(long id) {
-        repositorioJpa.updateEmpleadoSetEstadoForId(true, id);
-    }    
+	@Override
+	public void eliminar(long id) {
+		repositorioJpa.updateEmpleadoSetEstadoForId(true, id);
+	}
 }

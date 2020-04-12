@@ -22,9 +22,9 @@ public class CitaRepositorioAdaptador implements RepositorioCita {
     }
 
     @Override
-    public Cita crear(Cita cita) {
+    public void crear(Cita cita) {
         CitaEntity citaEntity = modelMapper.map(cita, CitaEntity.class);
-        return modelMapper.map(this.repositorioJpa.save(citaEntity), Cita.class);
+        this.repositorioJpa.save(citaEntity);
     }
 
     @Override

@@ -13,32 +13,32 @@ import java.util.List;
 @Repository
 public class ServicioRepositorioAdaptador implements RepositorioServicio {
 
-    private final RepositorioServicioJpa repositorioJpa;
-    private ModelMapper modelMapper = new ModelMapper();
+	private final RepositorioServicioJpa repositorioJpa;
+	private ModelMapper modelMapper = new ModelMapper();
 
-    public ServicioRepositorioAdaptador(RepositorioServicioJpa repositorioJpa) {
-        this.repositorioJpa = repositorioJpa;
-    }
+	public ServicioRepositorioAdaptador(RepositorioServicioJpa repositorioJpa) {
+		this.repositorioJpa = repositorioJpa;
+	}
 
-    @Override
-    public Servicio crear(Servicio servicio) {
-        ServicioEntity servicioEntity = modelMapper.map(servicio, ServicioEntity.class);
-       return modelMapper.map( this.repositorioJpa.save(servicioEntity), Servicio.class);
-    }
+	@Override
+	public void crear(Servicio servicio) {
+		ServicioEntity servicioEntity = modelMapper.map(servicio, ServicioEntity.class);
+		this.repositorioJpa.save(servicioEntity);
+	}
 
-    @Override
-    public List<Servicio> listar() {
-        List<ServicioEntity> repositorio = repositorioJpa.findByEstado(false);
-        List<Servicio> servicios = new ArrayList<>();
+	@Override
+	public List<Servicio> listar() {
+		List<ServicioEntity> repositorio = repositorioJpa.findByEstado(false);
+		List<Servicio> servicios = new ArrayList<>();
 
-        for (ServicioEntity servicioEntity : repositorio) {
-            servicios.add(modelMapper.map(servicioEntity, Servicio.class));
-        }
-        return servicios;
-    }
+		for (ServicioEntity servicioEntity : repositorio) {
+			servicios.add(modelMapper.map(servicioEntity, Servicio.class));
+		}
+		return servicios;
+	}
 
-    @Override
-    public void eliminar(long id) {
-       this.repositorioJpa.updateServicioSetEstadoForId(true, id);
-    }
+	@Override
+	public void eliminar(long id) {
+		this.repositorioJpa.updateServicioSetEstadoForId(true, id);
+	}
 }

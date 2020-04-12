@@ -12,7 +12,7 @@ public final class FabricaPersona {
 	}
 	
 	public static Persona modelo(ComandoPersona comando) {
-		return new Persona(comando.getId(), FebricarIdentificacion.modelo(comando.getIdentificacion()) , comando.getDocumento(), comando.getNombre(),
+		return new Persona(comando.getId(), comando.getIdentificacion() , comando.getDocumento(), comando.getNombre(),
 				comando.getCelular(), comando.getDireccion(), comando.getEmail(), comando.isEstado());
 	}
 

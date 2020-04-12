@@ -13,7 +13,7 @@ public final class FabricaVenta {
         return new Venta(
                 comando.getId(),
                 comando.getFecha(),
-                FabricaCita.modelo(comando.getCita()),
+                comando.getCita(),
                 comando.getUtilidad(),
                 comando.getComision(),
                 comando.getTotal(),

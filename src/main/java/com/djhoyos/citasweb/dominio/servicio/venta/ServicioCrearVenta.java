@@ -10,7 +10,7 @@ public class ServicioCrearVenta {
         this.repositorio = repositorio;
     }
 
-    public Venta crear(Venta venta) {
-        return this.repositorio.crear(venta);
+    public void crear(Venta venta) {
+        this.repositorio.crear(venta);
     }
 }

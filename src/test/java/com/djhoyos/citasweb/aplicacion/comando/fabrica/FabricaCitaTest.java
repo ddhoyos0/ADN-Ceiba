@@ -29,7 +29,7 @@ public class FabricaCitaTest {
     
     @Test
    public void validandoFabrica() {
-        ComandoCita comando = new ComandoCita(1, fecha,dataBuilder.buildComandoPersona(),dataBuilder.buildComandoEmpleado(),dataBuilder.buildComandoServicio(),false);
+        ComandoCita comando = new ComandoCita(1, fecha,dataBuilder.buildPersona(),dataBuilder.buildEmpleado(),dataBuilder.buildServicio(),false);
         cita = FabricaCita.modelo(comando);       
         assertNotNull(cita);
     }

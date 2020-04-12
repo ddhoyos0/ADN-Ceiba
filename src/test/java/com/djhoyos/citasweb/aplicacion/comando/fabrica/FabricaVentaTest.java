@@ -26,7 +26,7 @@ public class FabricaVentaTest {
 
     @Test
     public void fabricarmodelo() {
-        comando = new ComandoVenta(1, LocalDate.now(),dataBuilder.buildComandoCita(),10000,10000,20000,false);
+        comando = new ComandoVenta(1, LocalDate.now(),dataBuilder.buildCita(),10000,10000,20000,false);
         venta = FabricaVenta.modelo(comando);
         assertNotNull(venta);
     }

@@ -22,7 +22,7 @@ public class FabricaEmpleadoTest {
 
     @Test
     public void fabricarmodelo() {
-        comando = new ComandoEmpleado(1,50,dataBuilder.buildComandoPersona(),false);
+        comando = new ComandoEmpleado(1,50,dataBuilder.buildPersona(),false);
         empleado = FabricaEmpleado.modelo(comando);
         assertNotNull(empleado);
     }

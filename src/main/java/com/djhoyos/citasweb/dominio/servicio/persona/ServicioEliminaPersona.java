@@ -10,7 +10,7 @@ public class ServicioEliminaPersona {
         this.repositorio = repositorio;
     }
 
-    public void eliminar(long id){
+    public void eliminar(Integer id){
         repositorio.eliminar(id);
     }
 }

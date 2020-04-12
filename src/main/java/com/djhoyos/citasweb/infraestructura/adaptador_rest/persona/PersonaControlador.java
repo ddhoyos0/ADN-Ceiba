@@ -20,14 +20,12 @@ import com.djhoyos.citasweb.aplicacion.comando.manejador.persona.ManejadorCrearP
 import com.djhoyos.citasweb.aplicacion.comando.manejador.persona.ManejadorEliminarPersona;
 import com.djhoyos.citasweb.aplicacion.comando.manejador.persona.ManejadorListarPersona;
 import com.djhoyos.citasweb.dominio.modelo.Persona;
-import com.djhoyos.citasweb.infraestructura.adaptador_jpa.entidades.IdentificacionEntity;
-import com.djhoyos.citasweb.infraestructura.adaptador_jpa.repositorio.RepositorioDocumentoJpa;
 
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(value = "/persona")
 public class PersonaControlador {
-    private RepositorioDocumentoJpa documentoJpa;
+	
     private ManejadorCrearPersona servicioCrear;
     private ManejadorActualizarPersona servicioActualizar;
     private ManejadorEliminarPersona servicioEliminar;
@@ -37,23 +35,14 @@ public class PersonaControlador {
             ManejadorCrearPersona servicioCrear,
             ManejadorActualizarPersona servicioActualizar,
             ManejadorEliminarPersona servicioEliminar,
-            ManejadorListarPersona servicioListar,
-            RepositorioDocumentoJpa documentoJpa
+            ManejadorListarPersona servicioListar           
         ) {
         this.servicioCrear = servicioCrear;
         this.servicioActualizar = servicioActualizar;
         this.servicioEliminar = servicioEliminar;
         this.servicioListar = servicioListar ;
-        this.documentoJpa = documentoJpa ;
-
     }
-
-    @GetMapping("/documento")
-    @ResponseStatus(HttpStatus.OK)
-    public List<IdentificacionEntity> listarDocumento() {
-       return this.documentoJpa.findAll();
-    }
-
+    
     @PostMapping("/crear")
     @ResponseStatus(HttpStatus.CREATED)
     public void crear(@RequestBody ComandoPersona comando) {    	
@@ -68,7 +57,7 @@ public class PersonaControlador {
 
     @DeleteMapping("/eliminar/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void eliminar(@PathVariable long id) {
+    public void eliminar(@PathVariable Integer id) {
         this.servicioEliminar.eliminar(id);
     }
 

@@ -10,7 +10,7 @@ public class ServicioActualizarEmpleado {
         this.repositorio = repositorio;
     }
 
-    public Empleado actualizar(Empleado empleado){
-        return repositorio.crear(empleado);
+    public void actualizar(Empleado empleado){
+        repositorio.crear(empleado);
     }
 }

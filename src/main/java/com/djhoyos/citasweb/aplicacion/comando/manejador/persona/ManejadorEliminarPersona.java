@@ -12,7 +12,7 @@ public class ManejadorEliminarPersona {
         this.servicio = servicio;
     }
 
-    public void eliminar(long id) {
+    public void eliminar(Integer id) {
         servicio.eliminar(id);
     }
 }

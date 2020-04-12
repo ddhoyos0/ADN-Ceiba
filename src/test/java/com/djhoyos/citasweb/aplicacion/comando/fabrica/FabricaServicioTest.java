@@ -25,7 +25,6 @@ public class FabricaServicioTest {
     void fabricarmodelo() {
         comando = new ComandoServicio(1,"Manicure",12000,false);
         servicio = FabricaServicio.modelo(comando);
-        assertEquals(comando.getId(), servicio.getId());
         assertEquals(comando.getTipo(), servicio.getTipo());
         assertEquals(comando.getPrecio(), servicio.getPrecio());
     }

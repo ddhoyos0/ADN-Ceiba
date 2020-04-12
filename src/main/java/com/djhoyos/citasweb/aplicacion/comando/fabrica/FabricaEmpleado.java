@@ -13,7 +13,7 @@ public final class FabricaEmpleado {
         return new Empleado(
                 comando.getId(),
                 comando.getPorcentaje(),
-                FabricaPersona.modelo(comando.getPersona()),
+                comando.getPersona(),
                 comando.isEstado()
         );
     }    
