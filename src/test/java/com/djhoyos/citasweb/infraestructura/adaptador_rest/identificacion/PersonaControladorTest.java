@@ -3,6 +3,7 @@ package com.djhoyos.citasweb.infraestructura.adaptador_rest.identificacion;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -61,7 +62,18 @@ public class PersonaControladorTest {
 				.content(objectMapper.writeValueAsString(comando)).accept(MediaType.APPLICATION_JSON)).andDo(print())
 				.andExpect(status().isCreated());
 	}
-
+	
+	@Test
+	@Transactional
+	@Sql(scripts = "/datos.sql", executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
+	public void ActualizarPersona() throws Exception {
+		ComandoPersona comando = new ComandoPersona(1,datosBuilder.buildDocumento(),"1077625434","Jose carlos Hoyos","3224567893","Calle 64 # 24-32","jose9@gmail.com",false);	
+		MvcResult mvcResult = mockMvc.perform(put("/persona/actualizar").contentType(MediaType.APPLICATION_JSON)
+				.content(objectMapper.writeValueAsString(comando))).andReturn();
+		int status = mvcResult.getResponse().getStatus();
+		Assertions.assertEquals(200, status);
+	}
+	
 	@Test
 	public void ConsultaPersona() throws Exception {
 		MvcResult mvcResult = mockMvc.perform(
