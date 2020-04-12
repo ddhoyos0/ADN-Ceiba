@@ -1,8 +1,11 @@
 package com.djhoyos.citasweb.infraestructura.adaptador_jpa.repositorio.adaptador;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.List;
+
+import javax.transaction.Transactional;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,6 +14,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.TestPropertySource;
+import org.springframework.test.context.jdbc.Sql;
 
 import com.djhoyos.citasweb.databuider.TestDataBuilder;
 import com.djhoyos.citasweb.dominio.modelo.Venta;
@@ -32,6 +36,17 @@ class VentaRepositorioAdaptadorTest {
 		venta = new Venta();
 	}
 	
+
+	@Test
+	@Transactional
+	@Sql(scripts = "/datos.sql", executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
+	public void crearVenta() {
+		Venta venta = datos.buildVenta();
+		adaptador.crear(venta);
+		assertTrue(adaptador.listar().size() > 0);
+
+	}
+
 	@Test
 	public void listarVenta() {
 		 List<Venta> lista = adaptador.listar();
@@ -45,6 +60,12 @@ class VentaRepositorioAdaptadorTest {
 		assertNotNull(lista);
 
 	}	
+	
+	@Test
+	public void eliminarVenta() {
+		adaptador.eliminar(1);
+		assertTrue(adaptador.listar().size() == 0);
+	}
 
 
 }
