@@ -67,7 +67,7 @@ public class PersonaControladorTest {
 	@Transactional
 	@Sql(scripts = "/datos.sql", executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
 	public void ActualizarPersona() throws Exception {
-		ComandoPersona comando = new ComandoPersona(1,datosBuilder.buildDocumento(),"1077625434","Jose carlos Hoyos","3224567893","Calle 64 # 24-32","jose9@gmail.com",false);	
+		ComandoPersona comando = new ComandoPersona(1,datosBuilder.buildDocumento(),"1077625434","Jose carlos Hoyos","3224567893","Calle 64 # 24-32","jose9@gmail.com");	
 		MvcResult mvcResult = mockMvc.perform(put("/persona/actualizar").contentType(MediaType.APPLICATION_JSON)
 				.content(objectMapper.writeValueAsString(comando))).andReturn();
 		int status = mvcResult.getResponse().getStatus();

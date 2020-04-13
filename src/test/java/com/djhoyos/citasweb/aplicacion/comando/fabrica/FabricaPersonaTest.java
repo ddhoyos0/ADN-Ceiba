@@ -23,7 +23,7 @@ public class FabricaPersonaTest {
 
     @Test
     public void fabricarmodelo() {
-        comando = new ComandoPersona(1,dataBuilder.buildDocumento(),"1566745754","Carlos ramos","3225467809","Calle 70 # 56-32","carlos@gmail.com",false);
+        comando = new ComandoPersona(1,dataBuilder.buildDocumento(),"1566745754","Carlos ramos","3225467809","Calle 70 # 56-32","carlos@gmail.com");
         persona = FabricaPersona.modelo(comando);
         assertNotNull(persona);
     }

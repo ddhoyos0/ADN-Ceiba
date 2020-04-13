@@ -48,7 +48,7 @@ public class TestDataBuilder {
 	private static final String DIRECCION = "Calle 25 #32-54";
 
 	public ComandoPersona buildComandoPersona() {
-		return new ComandoPersona(1,buildDocumento(), NUMERO, NOMBRE, CELULAR, DIRECCION, EMAIL, false);
+		return new ComandoPersona(1,buildDocumento(), NUMERO, NOMBRE, CELULAR, DIRECCION, EMAIL);
 	}
 
 	/**

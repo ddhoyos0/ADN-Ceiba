@@ -41,4 +41,5 @@ class ServicioEntityTest {
 		assertEquals("Cepillado", servicio.getTipo());
 		assertFalse(servicio.isEstado());
 	}
+		
 }
