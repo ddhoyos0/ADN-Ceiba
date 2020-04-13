@@ -6,7 +6,7 @@ import com.djhoyos.citasweb.aplicacion.comando.ComandoIdentificacion;
 import com.djhoyos.citasweb.dominio.modelo.Identificacion;
 
 @Component
-public class FabricaIdentificacion {
+public final class FabricaIdentificacion {
 	
 	private FabricaIdentificacion() {
 	}
