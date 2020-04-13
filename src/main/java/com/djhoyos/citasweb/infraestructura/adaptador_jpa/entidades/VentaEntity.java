@@ -11,11 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import lombok.Data;
-
 @Entity
 @Table(name = "ventas")
-@Data
 public class VentaEntity {
   
 	@Id
@@ -37,4 +34,62 @@ public class VentaEntity {
     private int total;
 
     private boolean estado;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public LocalDate getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(LocalDate fecha) {
+		this.fecha = fecha;
+	}
+
+	public CitaEntity getCita() {
+		return cita;
+	}
+
+	public void setCita(CitaEntity cita) {
+		this.cita = cita;
+	}
+
+	public int getUtilidad() {
+		return utilidad;
+	}
+
+	public void setUtilidad(int utilidad) {
+		this.utilidad = utilidad;
+	}
+
+	public int getComision() {
+		return comision;
+	}
+
+	public void setComision(int comision) {
+		this.comision = comision;
+	}
+
+	public int getTotal() {
+		return total;
+	}
+
+	public void setTotal(int total) {
+		this.total = total;
+	}
+
+	public boolean isEstado() {
+		return estado;
+	}
+
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
+    
+    
 }

@@ -9,11 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import lombok.Data;
-
 @Entity
 @DiscriminatorValue(value="empleados")
-@Data
 public class EmpleadoEntity {
 	@Id
     @GeneratedValue( strategy= GenerationType.AUTO )
@@ -24,5 +21,37 @@ public class EmpleadoEntity {
     private PersonaEntity persona;
     
     private boolean estado;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public int getPorcentaje() {
+		return porcentaje;
+	}
+
+	public void setPorcentaje(int porcentaje) {
+		this.porcentaje = porcentaje;
+	}
+
+	public PersonaEntity getPersona() {
+		return persona;
+	}
+
+	public void setPersona(PersonaEntity persona) {
+		this.persona = persona;
+	}
+
+	public boolean isEstado() {
+		return estado;
+	}
+
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
 
 }

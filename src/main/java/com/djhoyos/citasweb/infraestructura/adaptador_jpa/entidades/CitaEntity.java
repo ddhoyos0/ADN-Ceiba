@@ -13,11 +13,8 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 
-import lombok.Data;
-
 @Entity
 @Table(name = "citas")
-@Data
 public class CitaEntity{
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -35,7 +32,55 @@ public class CitaEntity{
     @ManyToOne( cascade = CascadeType.REFRESH)
     private ServicioEntity servicio;
 
-    private boolean estado;   
+    private boolean estado;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public LocalDateTime getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(LocalDateTime fecha) {
+		this.fecha = fecha;
+	}
+
+	public PersonaEntity getPersona() {
+		return persona;
+	}
+
+	public void setPersona(PersonaEntity persona) {
+		this.persona = persona;
+	}
+
+	public EmpleadoEntity getEmpleado() {
+		return empleado;
+	}
+
+	public void setEmpleado(EmpleadoEntity empleado) {
+		this.empleado = empleado;
+	}
+
+	public ServicioEntity getServicio() {
+		return servicio;
+	}
+
+	public void setServicio(ServicioEntity servicio) {
+		this.servicio = servicio;
+	}
+
+	public boolean isEstado() {
+		return estado;
+	}
+
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}   
 
 
 }

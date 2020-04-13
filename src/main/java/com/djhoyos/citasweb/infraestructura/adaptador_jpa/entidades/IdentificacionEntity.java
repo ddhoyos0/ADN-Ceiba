@@ -8,12 +8,9 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
-import lombok.Data;
-
 @Entity
 @Table(name = "identificacion")
 @Inheritance( strategy = InheritanceType.SINGLE_TABLE )
-@Data
 public class IdentificacionEntity {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,5 +21,21 @@ public class IdentificacionEntity {
 	public IdentificacionEntity(long id, String tipo) {}
 
 	public IdentificacionEntity() {}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
 
 }
