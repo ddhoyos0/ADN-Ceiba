@@ -21,32 +21,16 @@ public class ComandoServicio {
 		return id;
 	}
 
-	public void setId(long id) {
-		this.id = id;
-	}
-
 	public String getTipo() {
 		return tipo;
 	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-
+	
 	public int getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(int precio) {
-		this.precio = precio;
-	}
-
 	public boolean isEstado() {
 		return estado;
-	}
-
-	public void setEstado(boolean estado) {
-		this.estado = estado;
 	}
     
 }

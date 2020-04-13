@@ -22,31 +22,16 @@ public class ComandoEmpleado{
 		return id;
 	}
 
-	public void setId(long id) {
-		this.id = id;
-	}
-
 	public int getPorcentaje() {
 		return porcentaje;
-	}
-
-	public void setPorcentaje(int porcentaje) {
-		this.porcentaje = porcentaje;
 	}
 
 	public Persona getPersona() {
 		return persona;
 	}
 
-	public void setPersona(Persona persona) {
-		this.persona = persona;
-	}
-
 	public boolean isEstado() {
 		return estado;
 	}
 
-	public void setEstado(boolean estado) {
-		this.estado = estado;
-	}
 }

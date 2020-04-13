@@ -31,56 +31,29 @@ public class ComandoVenta {
 		return id;
 	}
 
-	public void setId(long id) {
-		this.id = id;
-	}
-
 	public LocalDate getFecha() {
 		return fecha;
 	}
-
-	public void setFecha(LocalDate fecha) {
-		this.fecha = fecha;
-	}
-
+	
 	public Cita getCita() {
 		return cita;
-	}
-
-	public void setCita(Cita cita) {
-		this.cita = cita;
 	}
 
 	public int getUtilidad() {
 		return utilidad;
 	}
-
-	public void setUtilidad(int utilidad) {
-		this.utilidad = utilidad;
-	}
-
+	
 	public int getComision() {
 		return comision;
-	}
-
-	public void setComision(int comision) {
-		this.comision = comision;
 	}
 
 	public int getTotal() {
 		return total;
 	}
-
-	public void setTotal(int total) {
-		this.total = total;
-	}
-
+	
 	public boolean isEstado() {
 		return estado;
 	}
-
-	public void setEstado(boolean estado) {
-		this.estado = estado;
-	}       
+  
 
 }
